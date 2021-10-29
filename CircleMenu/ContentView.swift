@@ -17,6 +17,9 @@ struct ContentView: View {
             FullPetal(start: 180, color: .green)
             FullPetal(start: 240, color: .red)
             FullPetal(start: 300, color: .purple)
+            
+            Circle()
+                .frame(width: (UIScreen.main.bounds.width / 2 - 20) / 1.4)
         }
     }
 }

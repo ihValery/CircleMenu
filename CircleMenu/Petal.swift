@@ -42,7 +42,6 @@ struct Petal: Shape {
         p.addArc(center: center, radius: radius, startAngle: startAngel, endAngle: endAngel, clockwise: false)
         p.addLine(to: four)
         p.addArc(center: center, radius: radius / 2.5, startAngle: endAngel, endAngle: startAngel, clockwise: true)
-//        p.closeSubpath()
         
         return p
     }
