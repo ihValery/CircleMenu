@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    let size = ScreenSize()
     
     var body: some View {
         ZStack {
-//            Color.black
             LinearGradient(colors: [.mint, .purple], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
@@ -22,14 +22,14 @@ struct ContentView: View {
             FullPetal(start: 240, color: .red)
             FullPetal(start: 300, color: .purple)
             
-//            Circle()
-//                .frame(width: 100, height: 100)
-//                .overlay(
-//                    Text("Tap")
-//                        .font(.title.bold())
-//                        .foregroundColor(.white)
-//                )
-//                .opacity(0.3)
+            Circle()
+                .frame(width: size.buttonRadius * 2, height: size.buttonRadius * 2)
+                .opacity(0.3)
+                .overlay(
+                    Image(systemName: "hand.tap")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                )
         }
     }
 }
@@ -37,6 +37,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//            .preferredColorScheme(.dark)
     }
 }

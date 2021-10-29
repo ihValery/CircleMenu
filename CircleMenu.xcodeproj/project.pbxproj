@@ -14,6 +14,7 @@
 		80FB0EC4272B88B800A35BC7 /* Petal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FB0EC3272B88B800A35BC7 /* Petal.swift */; };
 		80FB0EC9272BB57000A35BC7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FB0EC8272BB57000A35BC7 /* Color.swift */; };
 		80FB0ECB272BB8A000A35BC7 /* FullPetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FB0ECA272BB8A000A35BC7 /* FullPetal.swift */; };
+		80FB0ECD272C9B6F00A35BC7 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FB0ECC272C9B6F00A35BC7 /* ScreenSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		80FB0EC3272B88B800A35BC7 /* Petal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petal.swift; sourceTree = "<group>"; };
 		80FB0EC8272BB57000A35BC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		80FB0ECA272BB8A000A35BC7 /* FullPetal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPetal.swift; sourceTree = "<group>"; };
+		80FB0ECC272C9B6F00A35BC7 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				80FB0ECA272BB8A000A35BC7 /* FullPetal.swift */,
 				80FB0EC3272B88B800A35BC7 /* Petal.swift */,
 				80FB0EC7272BB55800A35BC7 /* Extension */,
+				80FB0ECC272C9B6F00A35BC7 /* ScreenSize.swift */,
 				80F380C4272868D0009954A9 /* Assets.xcassets */,
 				80F380C6272868D0009954A9 /* Preview Content */,
 			);
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80FB0ECD272C9B6F00A35BC7 /* ScreenSize.swift in Sources */,
 				80F380C3272868CD009954A9 /* ContentView.swift in Sources */,
 				80FB0EC9272BB57000A35BC7 /* Color.swift in Sources */,
 				80FB0ECB272BB8A000A35BC7 /* FullPetal.swift in Sources */,

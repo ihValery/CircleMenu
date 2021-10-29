@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct FullPetal: View {
+    let size = ScreenSize()
+    
     var start: Double
     var color: Color
     
     var body: some View {
         ZStack {
             Petal(start: start, end: start + 60)
-                .foregroundStyle(.radialGradient(colors: [color, color.opacity(0)], center: .center, startRadius: 10, endRadius: UIScreen.main.bounds.width / 2.5))
-            Petal(start: start, end: start + 60)
-                .stroke(.clear, lineWidth: 40)
+                .foregroundStyle(.radialGradient(colors: [color, color.opacity(0)], center: .center, startRadius: 10, endRadius: size.radius - 10))
         }
-//        .background(Color.black)
     }
 }
 
