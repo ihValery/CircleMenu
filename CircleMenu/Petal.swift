@@ -21,27 +21,27 @@ struct Petal: Shape {
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2 - 20
         
-        let one = CGPoint(
-            x: center.x + (radius / 2.5) * cos(CGFloat(startAngel.radians)),
-            y: center.y + (radius / 2.5) * sin(CGFloat(startAngel.radians))
-        )
+//        let one = CGPoint(
+//            x: center.x + radius * cos(CGFloat(startAngel.radians)),
+//            y: center.y + radius * sin(CGFloat(startAngel.radians))
+//        )
         
-        let two = CGPoint(
-            x: center.x + radius * cos(CGFloat(startAngel.radians)),
-            y: center.y + radius * sin(CGFloat(startAngel.radians))
-        )
+//        let two = CGPoint(
+//            x: center.x + radius * cos(CGFloat(startAngel.radians)),
+//            y: center.y + radius * sin(CGFloat(startAngel.radians))
+//        )
         
-        let four = CGPoint(
-            x: center.x + (radius / 2.5) * cos(CGFloat(endAngel.radians)),
-            y: center.y + (radius / 2.5) * sin(CGFloat(endAngel.radians))
-        )
+//        let four = CGPoint(
+//            x: center.x + (radius / 2.5) * cos(CGFloat(endAngel.radians)),
+//            y: center.y + (radius / 2.5) * sin(CGFloat(endAngel.radians))
+//        )
         
         var p = Path()
-        p.move(to: one)
-        p.addLine(to: two)
-        p.addArc(center: center, radius: radius, startAngle: startAngel, endAngle: endAngel, clockwise: false)
-        p.addLine(to: four)
-        p.addArc(center: center, radius: radius / 2.5, startAngle: endAngel, endAngle: startAngel, clockwise: true)
+//        p.move(to: one)
+//        p.addLine(to: two)
+        p.addArc(center: center, radius: radius, startAngle: startAngel + .degrees(2), endAngle: endAngel - .degrees(2), clockwise: false)
+//        p.addLine(to: four)
+        p.addArc(center: center, radius: radius / 3.5, startAngle: endAngel - .degrees(5), endAngle: startAngel + .degrees(5), clockwise: true)
         
         return p
     }

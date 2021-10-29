@@ -14,9 +14,9 @@ struct FullPetal: View {
     var body: some View {
         ZStack {
             Petal(start: start, end: start + 60)
-                .fill(color)
+                .foregroundStyle(.radialGradient(colors: [color, color.opacity(0)], center: .center, startRadius: 10, endRadius: UIScreen.main.bounds.width / 2.5))
             Petal(start: start, end: start + 60)
-                .stroke(Color.systemApp, lineWidth: 10)
+                .stroke(.clear, lineWidth: 40)
         }
 //        .background(Color.black)
     }
