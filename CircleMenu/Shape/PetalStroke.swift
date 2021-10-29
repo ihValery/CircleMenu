@@ -19,15 +19,18 @@ struct PetalStroke: Shape {
     }
     
     func path(in rect: CGRect) -> Path {
+        let newStart: Angle = startAngel + .degrees(2)
+        let newEnd: Angle = endAngel - .degrees(2)
+        
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let one = CGPoint(
-            x: center.x + size.radius * cos(CGFloat(startAngel.radians)),
-            y: center.y + size.radius * sin(CGFloat(startAngel.radians))
+            x: center.x + size.radius * cos(CGFloat(newStart.radians)),
+            y: center.y + size.radius * sin(CGFloat(newStart.radians))
         )
         
         let two = CGPoint(
-            x: center.x + size.radius * cos(CGFloat(endAngel.radians)),
-            y: center.y + size.radius * sin(CGFloat(endAngel.radians))
+            x: center.x + size.radius * cos(CGFloat(newEnd.radians)),
+            y: center.y + size.radius * sin(CGFloat(newEnd.radians))
         )
         
         var p = Path()

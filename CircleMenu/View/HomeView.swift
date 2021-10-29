@@ -23,8 +23,10 @@ struct HomeView: View {
             FullPetal(start: 300, color: .purple)
             
             Circle()
+                .strokeBorder(Color.black, lineWidth: 2)
+                .background(Color.black.opacity(0.3).clipShape(Circle()))
                 .frame(width: size.buttonDiametr, height: size.buttonDiametr)
-                .opacity(0.3)
+                .opacity(0.8)
                 .overlay(
                     Image(systemName: "hand.tap")
                         .font(.largeTitle)
