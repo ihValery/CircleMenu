@@ -16,7 +16,9 @@ struct FullPetal: View {
     var body: some View {
         ZStack {
             Petal(start: start, end: start + 60)
-                .foregroundStyle(.radialGradient(colors: [color, color.opacity(0)], center: .center, startRadius: 10, endRadius: size.radius - 10))
+                .foregroundStyle(.radialGradient(colors: [color, color.opacity(0)], center: .center, startRadius: 50, endRadius: size.radius - 10))
+            PetalStroke(start: start, end: start + 60)
+                .stroke(RadialGradient(colors: [.black, .black.opacity(0)], center: .center, startRadius: 10, endRadius: size.radius - 10), lineWidth: 2)
         }
     }
 }
