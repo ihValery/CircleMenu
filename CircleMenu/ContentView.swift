@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         ZStack {
-            Petal(startAngel: .degrees(0 - 90), endAngel: .degrees(60 - 90))
-                .fill(Color.yellow)
-            Petal(startAngel: .degrees(60 - 90), endAngel: .degrees(120 - 90))
-                .fill(Color.orange)
-            Petal(startAngel: .degrees(120 - 90), endAngel: .degrees(180 - 90))
-                .fill(Color.blue)
-            Petal(startAngel: .degrees(180 - 90), endAngel: .degrees(240 - 90))
-                .fill(Color.red)
-            Petal(startAngel: .degrees(240 - 90), endAngel: .degrees(300 - 90))
-                .fill(Color.green)
-            Petal(startAngel: .degrees(300 - 90), endAngel: .degrees(0 - 90))
-                .fill(Color.purple)
+            FullPetal(start: 0, color: .yellow)
+            FullPetal(start: 60, color: .blue)
+            FullPetal(start: 120, color: .orange)
+            FullPetal(start: 180, color: .green)
+            FullPetal(start: 240, color: .red)
+            FullPetal(start: 300, color: .purple)
+            
+            Circle()
+                .frame(width: (UIScreen.main.bounds.width / 2 - 20) / 1.4)
         }
     }
 }
@@ -29,6 +27,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }
