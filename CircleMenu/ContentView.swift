@@ -11,6 +11,10 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+//            Color.black
+            LinearGradient(colors: [.mint, .purple], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            
             FullPetal(start: 0, color: .yellow)
             FullPetal(start: 60, color: .blue)
             FullPetal(start: 120, color: .orange)
@@ -18,8 +22,14 @@ struct ContentView: View {
             FullPetal(start: 240, color: .red)
             FullPetal(start: 300, color: .purple)
             
-            Circle()
-                .frame(width: (UIScreen.main.bounds.width / 2 - 20) / 1.4)
+//            Circle()
+//                .frame(width: 100, height: 100)
+//                .overlay(
+//                    Text("Tap")
+//                        .font(.title.bold())
+//                        .foregroundColor(.white)
+//                )
+//                .opacity(0.3)
         }
     }
 }
@@ -27,6 +37,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }
