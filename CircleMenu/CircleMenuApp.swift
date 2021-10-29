@@ -11,7 +11,7 @@ import SwiftUI
 struct CircleMenuApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
