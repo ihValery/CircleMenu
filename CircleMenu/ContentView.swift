@@ -23,7 +23,7 @@ struct ContentView: View {
             FullPetal(start: 300, color: .purple)
             
             Circle()
-                .frame(width: size.buttonRadius * 2, height: size.buttonRadius * 2)
+                .frame(width: size.buttonDiametr, height: size.buttonDiametr)
                 .opacity(0.3)
                 .overlay(
                     Image(systemName: "hand.tap")
