@@ -13,9 +13,9 @@ struct PetalStroke: Shape {
     var startAngel: Angle
     var endAngel: Angle
     
-    init(start: Double, end: Double) {
+    init(start: Double, radian: Double) {
         startAngel = .degrees(start - 90)
-        endAngel = .degrees(end - 90)
+        endAngel = .degrees(radian - 90)
     }
     
     func path(in rect: CGRect) -> Path {
@@ -35,7 +35,7 @@ struct PetalStroke: Shape {
         
         var p = Path()
         p.move(to: one)
-        p.addArc(center: center, radius: size.buttonRadius + 10,
+        p.addArc(center: center, radius: size.buttonRadius + 8,
                  startAngle: startAngel + .degrees(5),
                  endAngle: endAngel - .degrees(5),
                  clockwise: false)
