@@ -1,5 +1,5 @@
 //
-//  Petal.swift
+//  PetalBackground.swift
 //  CircleMenu
 //
 //  Created by Валерий Игнатьев on 29.10.2021.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct Petal: Shape {
+struct PetalBackground: Shape {
     let size = ScreenSize()
     
     var startAngel: Angle
     var endAngel: Angle
     
-    init(start: Double, end: Double) {
+    init(start: Double, radian: Double) {
         startAngel = .degrees(start - 90)
-        endAngel = .degrees(end - 90)
+        endAngel = .degrees(radian - 90)
     }
     
     func path(in rect: CGRect) -> Path {
@@ -25,7 +25,7 @@ struct Petal: Shape {
         p.addArc(center: center, radius: size.radius,
                  startAngle: startAngel + .degrees(2), endAngle: endAngel - .degrees(2),
                  clockwise: false)
-        p.addArc(center: center, radius: size.buttonRadius + 10,
+        p.addArc(center: center, radius: size.buttonRadius + 8,
                  startAngle: endAngel - .degrees(5),
                  endAngle: startAngel + .degrees(5),
                  clockwise: true)

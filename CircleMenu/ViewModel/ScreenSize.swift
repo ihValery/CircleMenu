@@ -20,10 +20,12 @@ class ScreenSize {
     
     var radius: CGFloat {
         let minSize = min(width, height) / 2 - 20
-        return minSize < 190 ? minSize : 190
+        return minSize < 160 ? minSize : 160
     }
     
-    var buttonRadius: CGFloat = 45
+    var buttonRadius: CGFloat {
+        height > 750 ? 45 : 38
+    }
     
     var buttonDiametr: CGFloat {
         buttonRadius * 2

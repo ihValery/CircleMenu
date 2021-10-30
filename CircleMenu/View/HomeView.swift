@@ -10,30 +10,31 @@ import SwiftUI
 struct HomeView: View {
     let size = ScreenSize()
     
+    @StateObject var petal = PetalOO()
+    
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.mint, .purple], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+//            LinearGradient(colors: [.mint, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
+//                .ignoresSafeArea()
             
-            FullPetal(start: 0, color: .yellow)
-            FullPetal(start: 60, color: .blue)
-            FullPetal(start: 120, color: .orange)
-            FullPetal(start: 180, color: .green)
-            FullPetal(start: 240, color: .red)
-            FullPetal(start: 300, color: .purple)
+            PickerPetal()
             
-            Circle()
-                .strokeBorder(Color.black, lineWidth: 2)
-                .background(Color.black.opacity(0.3).clipShape(Circle()))
-                .frame(width: size.buttonDiametr, height: size.buttonDiametr)
-                .opacity(0.8)
-                .overlay(
-                    Image(systemName: "hand.tap")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                )
+            ForEach(petal.petals) { item in
+                FullPetal(start: angleDependingCount(index: item.id), radian: radian(), color: item.color)
+            }
+            
+            ButtonHandTap()
         }
     }
+    
+    func angleDependingCount(index: Int) -> Double {
+        Double(360 / petal.petals.count * index)
+    }
+
+    func radian() -> Double {
+        Double(360 / petal.petals.count)
+    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
