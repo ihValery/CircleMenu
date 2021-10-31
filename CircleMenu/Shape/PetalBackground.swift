@@ -14,8 +14,8 @@ struct PetalBackground: Shape {
     var endAngel: Angle
     
     init(start: Double, radian: Double) {
-        startAngel = .degrees(start - 90)
-        endAngel = .degrees(radian - 90)
+        startAngel = .degrees(start + 90)
+        endAngel = .degrees(radian + 90)
     }
     
     func path(in rect: CGRect) -> Path {
