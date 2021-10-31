@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FullPetal: View {
-    let size = ScreenSize()
+    let size = Size()
     
     var start: Double
     var radian: Double

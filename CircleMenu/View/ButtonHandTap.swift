@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ButtonHandTap: View {
-    let size = ScreenSize()
+    let size = Size()
     
     var body: some View {
         Button {
