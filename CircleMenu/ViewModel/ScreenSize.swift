@@ -10,7 +10,7 @@ import UIKit
 class ScreenSize {
     private let size = UIScreen.main.bounds
     
-    private var width: CGFloat {
+    var width: CGFloat {
         size.width
     }
     

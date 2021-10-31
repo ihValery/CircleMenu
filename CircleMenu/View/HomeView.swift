@@ -12,29 +12,39 @@ struct HomeView: View {
     @StateObject private var petal = PetalOO()
     
     var body: some View {
-        ZStack {
-//            LinearGradient(colors: [.mint, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
-//                .ignoresSafeArea()
+        VStack {
+            ButtonPanel(petal: petal)
+                .padding(.top)
             
-            VStack {
-                ButtonPanel(petal: petal)
-                    .padding(.top)
-                
-                Spacer()
+            Spacer()
+            
+            
+            ZStack {
+                ForEach(petal.petals) { item in
+                    FullPetal(start: angleDependingCount(index: item.id), radian: radian(), color: item.color)
+                }
+                ButtonHandTap()
             }
             
-            ForEach(petal.petals) { item in
-                FullPetal(start: angleDependingCount(index: item.id), radian: radian(), color: item.color)
-            }
+            Spacer()
             
-            ButtonHandTap()
+            RoundedRectangle(cornerRadius: 16)
+                .fill(.ultraThinMaterial)
+                .padding()
+                .frame(width: size.width, height: size.radius)
         }
+        .background(
+            Image("background")
+                .resizable()
+                .scaleEffect(2)
+                .opacity(0.6)
+        )
     }
     
     func angleDependingCount(index: Int) -> Double {
         Double(360 / petal.petals.count * index)
     }
-
+    
     func radian() -> Double {
         Double(360 / petal.petals.count)
     }

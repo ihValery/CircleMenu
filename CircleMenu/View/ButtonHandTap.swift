@@ -15,10 +15,9 @@ struct ButtonHandTap: View {
             
         } label: {
             Circle()
-                .strokeBorder(Color.black, lineWidth: 2)
-                .background(Color.black.opacity(0.2).clipShape(Circle()))
+                .strokeBorder(Color.black, lineWidth: 1.3)
+                .background(.ultraThinMaterial).clipShape(Circle())
                 .frame(width: size.buttonDiametr, height: size.buttonDiametr)
-                .opacity(0.8)
                 .overlay(
                     Image(systemName: "hand.tap")
                         .font(.largeTitle)

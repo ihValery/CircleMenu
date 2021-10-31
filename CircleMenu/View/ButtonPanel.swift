@@ -15,6 +15,7 @@ struct ButtonPanel: View {
             HStack {
                 Group {
                     AddColor(color: .yellow, petal: petal)
+                        .padding(.leading)
                     AddColor(color: .green, petal: petal)
                     AddColor(color: .red, petal: petal)
                     AddColor(color: .purple, petal: petal)
@@ -30,6 +31,7 @@ struct ButtonPanel: View {
                     AddColor(color: .cyan, petal: petal)
                     AddColor(color: .gray, petal: petal)
                     AddColor(color: .indigo, petal: petal)
+                        .padding(.trailing)
                 }
             }
         }
