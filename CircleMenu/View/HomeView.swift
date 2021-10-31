@@ -8,43 +8,37 @@
 import SwiftUI
 
 struct HomeView: View {
-    let size = ScreenSize()
+    let size = Size()
     @StateObject private var petal = PetalOO()
+    @State private var color: Color = .clear
     
     var body: some View {
         VStack {
-            ButtonPanel(petal: petal)
-                .padding(.top)
+            TopPanelColor(petal: petal)
             
             Spacer()
             
-            
             ZStack {
                 ForEach(petal.petals) { item in
-                    FullPetal(start: angleDependingCount(index: item.id), radian: radian(), color: item.color)
+                    FullPetal(start: angle(index: item.id), radian: radian(), color: item.color)
                 }
                 ButtonHandTap()
             }
             
             Spacer()
             
-            RoundedRectangle(cornerRadius: 16)
-                .fill(.ultraThinMaterial)
-                .padding()
-                .frame(width: size.width, height: size.radius)
+            BottomPanelColor(color: $color)
         }
-        .background(
-            Image("background")
-                .resizable()
-                .scaleEffect(2)
-                .opacity(0.6)
-        )
+        .edgesIgnoringSafeArea(.vertical)
+        .background(ImageBG())
     }
-    
-    func angleDependingCount(index: Int) -> Double {
+
+    ///Угол в зависимости от количества лепестков
+    func angle(index: Int) -> Double {
         Double(360 / petal.petals.count * index)
     }
-    
+
+    ///Радиан в зависимости от количества лепестков
     func radian() -> Double {
         Double(360 / petal.petals.count)
     }

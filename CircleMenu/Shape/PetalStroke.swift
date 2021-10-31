@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PetalStroke: Shape {
-    let size = ScreenSize()
+    let size = Size()
     
     var startAngel: Angle
     var endAngel: Angle
