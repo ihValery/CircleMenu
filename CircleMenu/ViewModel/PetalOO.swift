@@ -8,18 +8,26 @@
 import SwiftUI
 
 class PetalOO: ObservableObject {
-    @Published var petals: [PetalDO] = [PetalDO(id: 0, color: .yellow),
-                                        PetalDO(id: 1, color: .brown)]
-//                                        PetalDO(id: 2, color: .blue),
-//                                        PetalDO(id: 3, color: .red),
-//                                        PetalDO(id: 4, color: .green)]
-//                                        PetalDO(id: 5, color: .purple)]
+    @Published var petals: [PetalDO] = []
     
-//    func fetch() {
-//        petals = [PetalDO(color: .yellow),
-//                  PetalDO(color: .brown),
-//                  PetalDO(color: .blue),
-//                  PetalDO(color: .red),
-//                  PetalDO(color: .green)]
-//    }
+    func add(color: Color) {
+        guard petals.count < 10 else { return }
+        
+        if petals.contains(where: { $0.color == color }) {
+            
+            if let last = petals.last, last.color == color {
+                petals.removeLast()
+            } else {
+                print("Такой цвет уже есть ))")
+            }
+    
+        } else {
+            petals.append(PetalDO(id: petals.count, color: color))
+        }
+        
+        for petal in petals {
+            print(petal)
+        }
+        print("\n Last \(String(describing: petals.last ?? nil))/n")
+    }
 }
