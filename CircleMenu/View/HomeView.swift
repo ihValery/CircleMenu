@@ -21,13 +21,14 @@ struct HomeView: View {
             ZStack {
                 ForEach(petal.petals) { item in
                     FullPetal(start: angle(index: item.id), radian: radian(), color: item.color)
+                        .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0.6), value: petal.petals.count)
                 }
                 ButtonHandTap()
             }
             
             Spacer()
             
-            BottomPanelColor(color: $color)
+//            BottomPanelColor(color: $color)
         }
         .edgesIgnoringSafeArea(.vertical)
         .background(ImageBG())

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PetalDO: Identifiable {
+struct PetalDO: Identifiable, Equatable {
     var id: Int
     var color: Color
 }
