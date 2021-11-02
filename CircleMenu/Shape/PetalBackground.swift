@@ -37,8 +37,8 @@ struct PetalBackground: Shape {
                  startAngle: startAngle + .degrees(2), endAngle: endAngle - .degrees(2),
                  clockwise: false)
         p.addArc(center: center, radius: size.buttonRadius + 8,
-                 startAngle: endAngle - .degrees(5),
-                 endAngle: startAngle + .degrees(5),
+                 startAngle: endAngle - .degrees(6),
+                 endAngle: startAngle + .degrees(6),
                  clockwise: true)
         return p
     }

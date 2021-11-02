@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ButtonHandTap: View {
     let size = Size()
+    @Binding var show: Bool
     
     var body: some View {
         Button {
-            
+            show.toggle()
         } label: {
             Circle()
                 .strokeBorder(Color.black, lineWidth: 1.3)
@@ -29,6 +30,6 @@ struct ButtonHandTap: View {
 
 struct ButtonHandTap_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonHandTap()
+        ButtonHandTap(show: .constant(true))
     }
 }

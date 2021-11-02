@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802C00982730E550005858EA /* RightColorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802C00972730E550005858EA /* RightColorPanel.swift */; };
 		80B30CF5272F4C3800D94C4F /* TopPanelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B30CF4272F4C3800D94C4F /* TopPanelColor.swift */; };
 		80B30CF7272F4C7D00D94C4F /* ImageBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B30CF6272F4C7D00D94C4F /* ImageBG.swift */; };
 		80F380C1272868CD009954A9 /* CircleMenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F380C0272868CD009954A9 /* CircleMenuApp.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802C00972730E550005858EA /* RightColorPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightColorPanel.swift; sourceTree = "<group>"; };
 		80B30CF4272F4C3800D94C4F /* TopPanelColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanelColor.swift; sourceTree = "<group>"; };
 		80B30CF6272F4C7D00D94C4F /* ImageBG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBG.swift; sourceTree = "<group>"; };
 		80F380BD272868CD009954A9 /* CircleMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				80FB0ED3272D394700A35BC7 /* ButtonHandTap.swift */,
 				80FB0ED7272D426E00A35BC7 /* ButtonPanel.swift */,
 				80B30CF4272F4C3800D94C4F /* TopPanelColor.swift */,
+				802C00972730E550005858EA /* RightColorPanel.swift */,
 				80B30CF6272F4C7D00D94C4F /* ImageBG.swift */,
 			);
 			path = View;
@@ -211,6 +214,7 @@
 				80F380C1272868CD009954A9 /* CircleMenuApp.swift in Sources */,
 				80FB0EC4272B88B800A35BC7 /* PetalBackground.swift in Sources */,
 				80FB0ED6272D418100A35BC7 /* PetalOO.swift in Sources */,
+				802C00982730E550005858EA /* RightColorPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

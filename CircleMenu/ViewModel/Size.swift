@@ -10,7 +10,7 @@ import UIKit
 class Size {
     private let size = UIScreen.main.bounds
     
-    private var height: CGFloat {
+    var height: CGFloat {
         size.height
     }
 

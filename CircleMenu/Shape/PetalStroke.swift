@@ -46,8 +46,8 @@ struct PetalStroke: Shape {
         var p = Path()
         p.move(to: one)
         p.addArc(center: center, radius: size.buttonRadius + 8,
-                 startAngle: startAngle + .degrees(5),
-                 endAngle: endAngle - .degrees(5),
+                 startAngle: startAngle + .degrees(6),
+                 endAngle: endAngle - .degrees(6),
                  clockwise: false)
         p.addLine(to: two)
         return p

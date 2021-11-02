@@ -11,11 +11,11 @@ struct ButtonPanel: View {
     @ObservedObject var petal: PetalOO
     
     var body: some View {
-        ScrollView (.horizontal, showsIndicators: false) {
-            HStack {
+        ScrollView (.vertical, showsIndicators: false) {
+            VStack {
                 Group {
                     AddColor(color: .yellow, petal: petal)
-                        .padding(.leading)
+                        .padding(.top)
                     AddColor(color: .green, petal: petal)
                     AddColor(color: .red, petal: petal)
                     AddColor(color: .purple, petal: petal)
@@ -31,7 +31,7 @@ struct ButtonPanel: View {
                     AddColor(color: .cyan, petal: petal)
                     AddColor(color: .gray, petal: petal)
                     AddColor(color: .indigo, petal: petal)
-                        .padding(.trailing)
+                        .padding(.bottom)
                 }
             }
         }
