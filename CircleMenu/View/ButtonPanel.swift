@@ -14,13 +14,13 @@ struct ButtonPanel: View {
         ScrollView (.vertical, showsIndicators: false) {
             VStack {
                 Group {
-                    AddColor(color: .yellow, petal: petal)
+                    AddColor(color: .red, petal: petal)
                         .padding(.top)
                     AddColor(color: .green, petal: petal)
-                    AddColor(color: .red, petal: petal)
                     AddColor(color: .purple, petal: petal)
-                    AddColor(color: .blue, petal: petal)
+                    AddColor(color: .yellow, petal: petal)
                     AddColor(color: .brown, petal: petal)
+                    AddColor(color: .blue, petal: petal)
                     AddColor(color: .mint, petal: petal)
                 }
                 Group {

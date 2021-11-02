@@ -24,7 +24,9 @@ struct HomeView: View {
                     FullPetal(start: angle(index: item.id), radian: radian(), color: item.color)
                         .animation(.spring(dampingFraction: 0.4).speed(4), value: petal.petals)
                         .onTapGesture {
-                            selectColor = item.color
+                            withAnimation(.easeInOut) {
+                                selectColor = item.color
+                            }
                         }
                 }
                 .opacity(show ? 1 : 0)
@@ -33,7 +35,7 @@ struct HomeView: View {
                 .rotationEffect(show ? .degrees(360) : .degrees(0))
                 .animation(.spring(dampingFraction: 0.8, blendDuration: 2), value: show)
                 
-                ButtonHandTap(show: $show)
+                ButtonHandTap(show: $show, selectColor: $selectColor)
                     .opacity(show ? 0.6 : 1)
             }
             

@@ -10,10 +10,14 @@ import SwiftUI
 struct ButtonHandTap: View {
     let size = Size()
     @Binding var show: Bool
+    @Binding var selectColor: Color
     
     var body: some View {
         Button {
             show.toggle()
+            withAnimation(.easeOut) {
+                selectColor = .clear
+            }
         } label: {
             Circle()
                 .strokeBorder(Color.black, lineWidth: 1.3)
@@ -25,11 +29,5 @@ struct ButtonHandTap: View {
                         .foregroundColor(.black.opacity(0.8))
                 )
         }
-    }
-}
-
-struct ButtonHandTap_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonHandTap(show: .constant(true))
     }
 }
