@@ -11,8 +11,6 @@ class PetalOO: ObservableObject {
     @Published var petals: [PetalDO] = []
     
     func add(color: Color) {
-        guard petals.count < 10 else { return }
-        
         if petals.contains(where: { $0.color == color }) {
             
             if let last = petals.last, last.color == color {
@@ -20,14 +18,11 @@ class PetalOO: ObservableObject {
             } else {
                 print("Такой цвет уже есть ))")
             }
-    
+            
         } else {
+            guard petals.count < 10 else { return }
+            
             petals.append(PetalDO(id: petals.count, color: color))
         }
-        
-        for petal in petals {
-            print(petal)
-        }
-        print("\n Last \(String(describing: petals.last ?? nil))/n")
     }
 }
