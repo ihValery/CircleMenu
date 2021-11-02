@@ -12,9 +12,9 @@ struct TopPanelColor: View {
     @ObservedObject var petal: PetalOO
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 40)
+        Rectangle()
             .fill(.ultraThinMaterial)
-            .frame(width: size.width, height: size.radius)
+            .frame(maxWidth: size.radius, maxHeight: .infinity)
             .overlay(
                 ButtonPanel(petal: petal)
             )

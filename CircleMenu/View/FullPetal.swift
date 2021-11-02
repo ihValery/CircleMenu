@@ -18,6 +18,7 @@ struct FullPetal: View {
         ZStack {
             PetalBackground(start: start, radian: start + radian)
                 .foregroundStyle(.radialGradient(colors: [color, color.opacity(0)], center: .center, startRadius: size.radius * 2 / 3, endRadius: size.radius))
+
             PetalStroke(start: start, radian: start + radian)
                 .stroke(RadialGradient(colors: [.black, .black.opacity(0)], center: .center, startRadius: size.radius * 2 / 3, endRadius: size.radius), lineWidth: 1)
         }

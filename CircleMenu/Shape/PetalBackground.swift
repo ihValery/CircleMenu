@@ -9,25 +9,36 @@ import SwiftUI
 
 struct PetalBackground: Shape {
     let size = Size()
-    
-    var startAngel: Angle
-    var endAngel: Angle
-    
-    init(start: Double, radian: Double) {
-        startAngel = .degrees(start + 90)
-        endAngel = .degrees(radian + 90)
+
+    var startAngle: Angle
+    var endAngle: Angle
+
+    //Angle сам по себе не является VectorArithmetic, Angle в радианах — это Double
+    var animatableData: AnimatablePair<Double, Double> {
+        get {
+            AnimatablePair(startAngle.radians, endAngle.radians)
+        }
+        set {
+            startAngle = Angle.radians(newValue.first)
+            endAngle = Angle.radians(newValue.second)
+        }
     }
-    
+
+    init(start: Double, radian: Double) {
+        startAngle = .degrees(start + 90)
+        endAngle = .degrees(radian + 90)
+    }
+
     func path(in rect: CGRect) -> Path {
         let center = CGPoint(x: rect.midX, y: rect.midY)
-        
+
         var p = Path()
         p.addArc(center: center, radius: size.radius,
-                 startAngle: startAngel + .degrees(2), endAngle: endAngel - .degrees(2),
+                 startAngle: startAngle + .degrees(2), endAngle: endAngle - .degrees(2),
                  clockwise: false)
         p.addArc(center: center, radius: size.buttonRadius + 8,
-                 startAngle: endAngel - .degrees(5),
-                 endAngle: startAngel + .degrees(5),
+                 startAngle: endAngle - .degrees(6),
+                 endAngle: startAngle + .degrees(6),
                  clockwise: true)
         return p
     }

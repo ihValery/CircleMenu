@@ -10,17 +10,27 @@ import SwiftUI
 struct PetalStroke: Shape {
     let size = Size()
     
-    var startAngel: Angle
-    var endAngel: Angle
+    var startAngle: Angle
+    var endAngle: Angle
+    
+    var animatableData: AnimatablePair<Double, Double> {
+        get {
+            AnimatablePair(startAngle.radians, endAngle.radians)
+        }
+        set {
+            startAngle = Angle.radians(newValue.first)
+            endAngle = Angle.radians(newValue.second)
+        }
+    }
     
     init(start: Double, radian: Double) {
-        startAngel = .degrees(start + 90)
-        endAngel = .degrees(radian + 90)
+        startAngle = .degrees(start + 90)
+        endAngle = .degrees(radian + 90)
     }
     
     func path(in rect: CGRect) -> Path {
-        let newStart: Angle = startAngel + .degrees(2)
-        let newEnd: Angle = endAngel - .degrees(2)
+        let newStart: Angle = startAngle + .degrees(2)
+        let newEnd: Angle = endAngle - .degrees(2)
         
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let one = CGPoint(
@@ -36,8 +46,8 @@ struct PetalStroke: Shape {
         var p = Path()
         p.move(to: one)
         p.addArc(center: center, radius: size.buttonRadius + 8,
-                 startAngle: startAngel + .degrees(5),
-                 endAngle: endAngel - .degrees(5),
+                 startAngle: startAngle + .degrees(6),
+                 endAngle: endAngle - .degrees(6),
                  clockwise: false)
         p.addLine(to: two)
         return p
