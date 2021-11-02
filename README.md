@@ -7,4 +7,5 @@
 - animatableData: AnimatablePair поддерживающий протокол VectorArithmetic
 - Анимирует только что уже на экране!
 
+<img src="https://github.com/ihValery/CircleMenu/blob/main/CircleMenu.gif"></a>
 
